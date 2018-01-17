@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: drawmatrix.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: drawmatrix.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+* @ignore  =====================================================================================
+* @fileoverview This file contains all functions about create and draw Matrix and piece
+* @author  Bowen Yuan, Tim Zhang, Micho Wang
+* @version 1.0.0
+* @ignore  created in 2017-11-11
+* @ignore  =====================================================================================
+*/
+
+
+
+/**
+* Create a metrix with width w and height h
+* @param {int} w - width of the metrix
+* @param {int} h - height of the metrix
+* @return matrix 
+*/
+function createMatrix(w, h) {
+    const matrix = [];
+    while (h--) {
+        matrix.push(new Array(w).fill(0));
+    }
+    return matrix;
+}
+
+/**
+* Return a specific tetrimino's metrix by inputing type
+* @param {char} type 
+* @return A specific tetrimino's metrix
+*/
+function createPiece(type)
+{
+    if (type === 'I') {
+        return [
+            [0, 1, 0, 0],
+            [0, 1, 0, 0],
+            [0, 1, 0, 0],
+            [0, 1, 0, 0],
+        ];
+    } else if (type === 'L') {
+        return [
+            [0, 2, 0],
+            [0, 2, 0],
+            [0, 2, 2],
+        ];
+    } else if (type === 'J') {
+        return [
+            [0, 3, 0],
+            [0, 3, 0],
+            [3, 3, 0],
+        ];
+    } else if (type === 'O') {
+        return [
+            [4, 4],
+            [4, 4],
+        ];
+    } else if (type === 'Z') {
+        return [
+            [5, 5, 0],
+            [0, 5, 5],
+            [0, 0, 0],
+        ];
+    } else if (type === 'S') {
+        return [
+            [0, 6, 6],
+            [6, 6, 0],
+            [0, 0, 0],
+        ];
+    } else if (type === 'T') {
+        return [
+            [0, 7, 0],
+            [7, 7, 7],
+            [0, 0, 0],
+        ];
+    } else if (type === 'B'){
+        return [
+            [0, 0, 0],
+            [0, 8, 0],
+            [0, 0, 0]
+        ];
+    }
+}
+
+/**
+* Draw a matrix in canvas
+* @param {int[][]} matrix - the target matrix
+* @param {offset} offset - the offset of matrix
+*/
+function drawMatrix(matrix, offset) {
+    matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                context.fillStyle = colors[value];
+                context.fillRect(x + offset.x,
+                                 y + offset.y,
+                                 1, 1);
+            }
+        });
+    });
+}
+
+function drawNextTetris(matrix,offset){
+    matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                nextcontext.fillStyle = colors[value];
+                nextcontext.fillRect(x + offset.x,
+                                 y + offset.y,
+                                 1, 1);
+            }
+        });
+    });
+}
+
+module.exports = {
+    createMatrix, createPiece, drawMatrix, drawNextTetris
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#arenaSweep">arenaSweep</a></li><li><a href="global.html#bombSweep">bombSweep</a></li><li><a href="global.html#collide">collide</a></li><li><a href="global.html#createMatrix">createMatrix</a></li><li><a href="global.html#createPiece">createPiece</a></li><li><a href="global.html#draw">draw</a></li><li><a href="global.html#drawMatrix">drawMatrix</a></li><li><a href="global.html#lookForBomb">lookForBomb</a></li><li><a href="global.html#merge">merge</a></li><li><a href="global.html#nextBomb">nextBomb</a></li><li><a href="global.html#playerDrop">playerDrop</a></li><li><a href="global.html#playerMove">playerMove</a></li><li><a href="global.html#playerReset">playerReset</a></li><li><a href="global.html#playerRotate">playerRotate</a></li><li><a href="global.html#randomClear">randomClear</a></li><li><a href="global.html#restartGame">restartGame</a></li><li><a href="global.html#rotate">rotate</a></li><li><a href="global.html#setBomb">setBomb</a></li><li><a href="global.html#slowDrop">slowDrop</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateMoney">updateMoney</a></li><li><a href="global.html#updateScore">updateScore</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Dec 06 2017 23:37:07 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

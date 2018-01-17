@@ -1,0 +1,77 @@
+/**
+* @ignore  =====================================================================================
+* @fileoverview This file contains all css sytles
+* @author  Bowen Yuan, Tim Zhang, Micho Wang
+* @version 1.0.0
+* @ignore  created in 2017-11-10
+* @ignore  =====================================================================================
+*/
+
+
+
+<style>
+      body {
+        background: #202028;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 1em;
+
+      }
+      #tetris {
+        border: solid .2em #fff;
+        height: 80vh;
+        position: absolute;
+        left:35%;
+        top:17%;
+      }
+
+      #nexttetris {
+        border: solid .2em #fff;
+        height: 20vh;
+        position: absolute;
+        left:20%;
+        top:17%;
+      }
+
+      #score {  
+        position: absolute;
+      	top: 28%;
+        left:5%;
+        font-size: 2em; }
+
+      #money{  
+        position: absolute;
+      	top: 39%;
+        left:5%;
+        font-size: 2em; }
+        td >img {
+          max-height:50px;
+        	max-width: 50px;
+        }
+
+    #t1 { 
+      position: absolute;
+    	top: 56%;
+      left:5%; 
+      text-align: left;        
+      font-size: 1.5em;
+    }
+
+    #t2 { 
+      position: absolute;
+      top: 25%;
+      left:70%; 
+      text-align: left;
+      font-size: 1.25em;
+    }
+		#title{
+		  position: absolute;
+      top: 1%;
+      left:35%; 	
+		}
+		#group{
+		  position: absolute;
+      top: 80%;
+      left:80%; 	
+		}
+</style>

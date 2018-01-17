@@ -1,0 +1,524 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{pifont}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{changepage}
+\usepackage{tabto}
+\usepackage{mdframed}
+\usepackage{xkeyval}
+\usepackage[round]{natbib}
+\usepackage{soul}
+\usepackage{color}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+
+\usepackage[singlelinecheck=off, skip=2pt, labelfont=bf]{caption}
+\usepackage{titlesec}
+\usepackage{graphicx}
+
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{magenta}{SS}{#1}}
+\newcommand{\ds}[1]{\authornote{blue}{DS}{#1}}
+
+
+
+
+\makeatletter
+
+\define@cmdkey      [SRS] {event} {name}      {}
+\define@cmdkey      [SRS] {event} {trigger}   {}
+\define@cmdkey      [SRS] {event} {precond}   {}
+\define@cmdkey      [SRS] {event} {postcond}  {}
+
+\newcounter{EventNum}
+\newcommand{\event}[1]{
+\setkeys[SRS]{event}{#1}
+\refstepcounter{EventNum}
+\begin{mdframed}
+\noindent {\bf Use Case \#:} \arabic{EventNum}\\[\baselineskip]
+\begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
+{\bf Name:} & \cmdSRS@event@name\\
+{\bf Trigger:} & \cmdSRS@event@trigger\\
+{\bf Precondition:} & \cmdSRS@event@precond\\
+{\bf Postcondition:} & \cmdSRS@event@postcond
+\end{tabularx}
+\end{mdframed}
+}
+
+\makeatother
+\title{\parbox{\linewidth}{\centering Software Requirements Specification\endgraf\bigskip Super Tetris}}
+\author{\parbox{\linewidth}{\bigskip \centering Group\#: 38 \endgraf\bigskip Team Name: Binary \endgraf\bigskip Members: \endgraf\bigskip Tongfei Wang : wangt62 \endgraf\bigskip Bowen Yuan : yuanb1 \endgraf\bigskip Tim Zhang : zhangj14}}
+\date{\parbox{\linewidth}{\bigskip\bigskip \centering \today\endgraf\bigskip SFWR ENG 3XA3 \endgraf\bigskip McMaster University}}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Oct 6 2017 & 1.0 & Project Drivers Uploaded\\
+Oct 6 2017 & 1.1 & Functional Requirements Uploaded\\
+Oct 6 2017 & 1.2 & Non-Functional Requirements Uploaded\\
+Oct 6 2017 & 1.3 & Project Issues Uploaded\\
+Dec 6 2017 & 2.1 & Rev\_1 Updated\\
+Dec 6 2017 & 2.2 & Rev\_1 Updated\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Project Drivers}
+
+\subsection{The Purpose of the Project}
+\tab Tetris is a tile-matching puzzle game. "Tetrominoes" are differently shaped
+blocks and they drop from the top of the screen one by one. The player can move
+or rotate the Tetriminos as they fall. The goal of this game is to create a horizontal
+line without gaps. Once the line is created, it will disappear and be replaced by the
+blocks above it.The purpose of the game is to bring the joy back to the players
+who love it.\\
+\tab Game occupies a great part of many people's leisure time, and lately, it
+becomes much more so with a rising use of gaming devices. However, as there are
+numerous games to choose, Tetris is no longer a good choice for people. Once
+upon a time, this classical game earned its fans with the unique play style.
+Currently, with the burst of technology, many new games come to the world with
+their fascinating theme and attractive scene, which pushes Tetris out of the age.
+As a result, it is essential to modify the game to make it more competitive.
+
+\subsection{The Stakeholders}
+
+\subsubsection{The Client}
+\tab  Dr. Asghar A Bokhari is the client. He is the professor of Software Engineering Department at McMaster University. The project is developed under his requirement.
+
+\subsubsection{The Customers}
+\tab Anyone who has a laptop or a computer connected to the Internet are the customers. Although the game is developed for the people who interested in Tetris, anyone can get access to the game.
+
+\subsubsection{Other Stakeholders}
+\tab There will be some testers to test the game if it is playable or even fun.  As the project will be uploaded to the Gitlab as open source, any developer who is interested in modifying it would be welcome. Shucai Yao, the teaching assistant of Dr. Asghar A Bokhari, will help the team to manage the project and develop the program.
+   
+
+\subsection{Mandated Constraints}
+
+\subsubsection{Solution Constrains}
+\tab  The game shall playable on the Internet.
+\tab \textcolor{red}{The system shall meet every functional and non-functional requirements.}
+
+\subsubsection{Implementation Environment of the Current System}
+\tab The game is playable if the devices connect to the Internet.
+\textcolor{red}{The system shall work on website. It shall be opened on
+every major browser such as IE, Chrome, etc. 
+The system shall be implemented in Javascript and HTML.}
+
+\subsubsection{Schedule Constraints}
+\tab The project must be finished before December 6th.
+
+
+
+\subsection{Naming Conventions and Terminology}
+
+
+\begin{table}[h]
+\caption{\bf List of Terminology} \label{tab:terminology}
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule {\bf Term} & {\bf Definition}\\
+\midrule
+Tetrominoes & Geometric shape composed of four squares\\
+Item &  Four different items to help player get higher scores\\
+Line Clear & The only way to obtain score\\
+Score & Measure of Player's performance\\
+\textcolor{red}{up} & \textcolor{red}{ arrow key in the keyboard}\\
+\textcolor{red}{ left } &\textcolor{red}{ arrow key in the keyboard}\\
+\textcolor{red}{right } & \textcolor{red}{arrow key in the keyboard}\\
+\textcolor{red}{ down } & \textcolor{red}{arrow key in the keyboard}\\
+\textcolor{red}{ enter } & \textcolor{red}{enter key in the keyboard}\\
+\textcolor{red}{  r } & \textcolor{red}{character key in the keyboard}\\
+\textcolor{red}{  1,2,3,4 } & \textcolor{red}{number key in the keyboard}\\
+\textcolor{red}{  experience  } & \textcolor{red}{Measure of Player's performance}\\
+\textcolor{red}{  money } & \textcolor{red}{economy system for the items system.}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\subsection{Relevant Facts and Assumptions}
+\tab We assume that the players have the basic awareness of the original Tetris. It is also essential that the Internet connection will stay stable and the device will not be turned off by accident. The device for playing the game should either be a laptop or a computer which has a keyboard and a mouse. We assume that the players have the basic skills about using a computer or laptop. 
+
+\section{Functional Requirements}
+
+\subsection{The Scope of the Work and the Product}
+
+\subsubsection{The Context of the Work}
+\tab The main task is to create a game called "SuperTetris" based on the classic Tetris game that everyone can play this game on the Internet. We need a \st{elastic cloud} server on which we can put all our project files to host the game. And this will also require a domain linked to our public IP address to make everyone can have access to this game. Last but not least, we plan to make this game downloadable so users can play this game without the Internet.
+\subsubsection{Work Partitioning}
+\tab \st{The development of this game should be shared evenly between three team members. Tim is responsible for designing the game logic. The specific coding work is mainly going to be done by Micho and Bowen. And Bowen is also responsible for dealing with the server's issues.}\\
+\textcolor{red} {Work Partitioning Event List:\\
+\tab 1. User inputs Website address on a browser.    \\
+\tab 2. User starts the games.\\
+\tab 3. User moves the Tetriminos.\\
+\tab 4. User rotates the Tetriminos.\\
+\tab 5. User uses an item \\
+\tab 6. A horizontal line is formed\\
+\tab 7. Game ends}
+\subsubsection{List of Events}
+
+\begin{table}[!htbp]
+\caption{\bf List of Event}\label{listofevent}
+\begin{adjustwidth}{-2cm}{0cm}
+\centering
+\begin{tabular}{|c|c|p{6cm}|}
+\hline
+ \textbf{ Label \& Event Name  } & \textbf{Inputs/Outputs} & \tab \tab \textbf{Summary} \\
+\hline
+E1 :New Game & User runs the game(in)   &  {\footnotesize  A new game was started} \\
+\hline
+E2 :Pause  & Press "enter"(in)     &  {\footnotesize  Game paused} \\
+\hline
+E3:Resume   & Press "enter"(in)    &  {\footnotesize  Game resumed} \\
+\hline
+E4:Restart    & Press "r"(in)      &  {\footnotesize  Game restarted} \\
+\hline
+E5:Rotate tetromino   & Press "up"(in) game state(out)   &  {\footnotesize  The current tetromino was rotated clockwise by 90 degrees} \\
+\hline
+E6:Left move     & Press "left"(in) game state(out)      &  {\footnotesize  Move the current tetromino left by one grid} \\
+\hline
+E7:Right move     & Press "right"(in) game state(out)     &  {\footnotesize  Move the current tetromino right by one grid} \\
+\hline
+E8:Let it fall     & Press "down"(in) game state(out)     &  {\footnotesize  Let the current tetromino fall to the bottom} \\
+\hline
+E9:Use item(bomb)    & Press "1"(in) game state(out)      &  {\footnotesize Buy an item(bomb) and use it/Transaction fails and a reminder appears} \\
+\hline
+E10:Use item(slow)   &Press "2"(in) game state(out)       &  {\footnotesize Buy an item(slow) and use it/Transaction fails and a reminder appears} \\
+\hline
+E11:Use item(skip)   &Press "3"(in) game state(out)    &  {\footnotesize Buy an item(skip) and use it/Transaction fails and a reminder appears} \\
+\hline
+E12:Use item(clear)   &Press "4"(in) game state(out)   &  {\footnotesize Buy an item(clear) and use it/Transaction fails and a reminder appears} \\
+\hline
+E13:Clear up row(s)  &game state(out)   &  {\footnotesize One row or multiple rows are cleared up and everything above shall fall} \newline
+{\footnotesize Experience and score shall increase} \\
+\hline
+E14:Bomb falls   &game state(out) &  {\footnotesize Clear up an area of 5*5 around the bomb/Experience and score shall 	increase } \\
+\hline
+E15:Game over    &Game Over(out)     &  {\footnotesize The game is over and no more tetromino falling} \\
+\hline
+
+\end{tabular}
+
+\end{adjustwidth}
+\end{table}
+
+\newpage
+
+
+\subsubsection{Use case}
+
+\event{
+    name = New Game,
+    trigger = As the user enters our website,
+    precond = None,
+    postcond = A new game starts
+} \label{event:newgame}
+
+\event{
+    name = Pause the game,
+    trigger = As the user press "enter",
+    precond = The game is in progress,
+    postcond = Game pauses
+} \label{event:pausethegame}
+
+\event{
+    name = Resume the game,
+    trigger = As the user press "enter",
+    precond = The game is paused,
+    postcond = Game resumes
+} \label{event:resumethegame}
+
+\event{
+    name = Restart the game,
+    trigger = As the user press "r",
+    precond = The game is in progress,
+    postcond = Game restarts
+} \label{event:restart}
+
+\newpage
+\event{
+    name = Rotate the tetromino,
+    trigger = As the user press "up",
+    precond = The game is in progress,
+    postcond = The current tetromino is rotated clockwise by 90 degrees
+} \label{event:rotate}
+
+\event{
+    name = Tetromino Movement,
+    trigger = As the user press "left" or "right",
+    precond = The game is in progress,
+    postcond = The current tetromino is moved left/right by one grid
+} \label{event:leftright}
+
+\event{
+    name = Tetromino Movement,
+    trigger = As the user press "down",
+    precond = The game is in progress,
+    postcond = The current tetromino falls to the bottom
+} \label{event:down}
+
+\event{
+    name = Clear up a row(s),
+    trigger = RoClearroww(s) filled with "squares",
+    precond = The game is in progress,
+    postcond = One row or multiple rows are cleared up and everything above shall fall
+} \label{event:Clearrow}
+\newpage
+\event{
+    name = Player uses items,
+    trigger = When the user press "1" or "2" or "3" or "4",
+    precond = The game is in progress \& Player has enough experience to "buy" the corresponding item,
+    postcond = Transaction is successful and item is used at once
+} \label{event:usesitem}
+
+\event{
+    name = \st{Player uses items},
+    trigger = \st{When the user press "1" or "2" or "3" or "4"},
+    precond = \st{The game is in progress \& Player has enough experience to "buy" the corresponding item},
+    postcond = \st{Remind the user 'you don't have enough experience'}
+} \label{event:usesitem1}
+
+\event{
+    name = Game over,
+    trigger = Part of a new tetromino(or the whole tetromino) cannot be displayed in the game playfield ,
+    precond = The game is in progress,
+    postcond = The game is over 
+} \label{event:gameover}
+\newpage
+\subsection{Functional Requirements}
+~\newline
+\textbf{FR1}: Interface\\
+\textbf{Description:} \st{We bought a cloud server and a public IP address, So the project's URL shall be accessed by any user with the Internet and any component of this game shall be displayed successfully.}
+{\color{red}    The user shall have access to the website.}\\
+\textbf{Rationale: }{\color{red}     User shall be able to open the website} \\ 
+\textbf{Fit Criterion:} {\color{red}    the “Super Tetris” website is opened after inputting the right website address } \\
+\newline
+\textbf{FR2}: Playfield\\
+\textbf{Description:} \st{The height and the width of the playfield shall be 20 and 10. }The playfield shall be stable and unchangeable \st{throughout the game and any part of Tetrimino shall not exceed the playfield's board.}\\
+\textbf{Rationale: }{\color{red}     throughout the game and any part of Tetrimino shall be in the right place} \\ 
+\textbf{Fit Criterion:} {\color{red}    No Tetriminos exceeds the playfield in entire time.} \\
+\newline
+\textbf{FR3}: Tetriminoes\\
+\textbf{Description:} \st{There are 7 Tetriminoes with different shapes in the game. Every Tetrimino is made up of four 1*1 squares. Any Tetrimino shall be displayed androtated correctly}. {\color{red}    Any Tetrimino shall be able to be rotated}\\
+\textbf{Rationale: }{\color{red}     User clicks the rotate button.} \\ 
+\textbf{Fit Criterion:} {\color{red}    The Tetrimono is rotated correctly. } \\
+\newline
+\textbf{FR4}: Tetriminoes' color\\
+\textbf{Description:} \st{Every Tetrimino shall be painted in 7 different colors to make it easier for users to classify them. }{\color{red}    Users shall easily classify each kind of Tetriminos.}
+\textbf{Rationale: }{\color{red}     Each kind of Tetriminos has different color} \\ 
+\textbf{Fit Criterion:} Tetrimino colors: Cyan, Orange, Red, Blue, Green, Purple, Yellow {\color{red}    for each kind of Tetriminos.} \\
+\newline
+\textbf{FR5}: \st{How to }Steer the Tetrimino   \tab Use case: \hyperref[event:pausethegame]{\#5,}\hyperref[event:rotate]{\#6,\#7} \\
+\textbf{Description:} \st{The cursor keys shall steer the Tetriminoes correctly(Up arrow is to rotate the Tetrimino, down arrow is to let the current Tetrimino fall, left and right arrow is to move the Tetrimino left or right by one grid)}{\color{red}    User is able to steer the Tetriminos.} \\
+\textbf{Rationale: }{\color{red}     User clicks the steer button. } \\ 
+\textbf{Fit Criterion:} {\color{red}    The Tetrimono is steered correctly.} \\
+\newline
+\textbf{FR6}: Game control \tab Use case: \hyperref[event:pausethegame]{\#2,\#3,\#4} \\
+\textbf{Description:} \st{Press “r” shall restart the game and Press enter can pause the game.(When the game is paused, press enter again shall resume the game)}{\color{red}    User is able to restart the game.}\\
+\textbf{Rationale: }{\color{red}     User shall be able to click the a button to restart the game. } \\ 
+\textbf{Fit Criterion:} {\color{red}    The game is restarted when restart button is clicked.} \\
+\newline
+\textbf{FR7}: Next Tetrimino\\
+\textbf{Description:} There is an individual field to display the next Tetrimino. \st{The next Tetrimino is random and the Tetrimino displayed in this field shall appear in the playfield at once.}\\
+\textbf{Rationale: }{\color{red}     The next Tetrimino is random and the Tetrimino displayed in this field shall appear in the playfield at once.} \\ 
+\textbf{Fit Criterion:} {\color{red}    the Tetriminos are correctly displayed} \\
+\newline
+\noindent \textbf{FR8}: Collision\\
+\st{When a Tetrimino's any part's bottom touches another Tetrimino or the bottom of the playfield, the Tetrimino shall stop falling immediately. Every two Tetriminoes cannot take up common grids and any part of Tetrimino can't exceed the playfield.}\\
+ \textbf{Description:} {\color{red}    The Tetriminos shall stop dropping at a cuter case. } \\ 
+\textbf{Rationale: }{\color{red}     The Tetriminos shall stop at the bottom of the playfield.} \\ 
+\textbf{Fit Criterion:} {\color{red}    Tetriminos stops at the bottom of the playfield.} \\
+\newline
+\textbf{FR9}: Clear up one line \tab Use case: \hyperref[event:Clearrow]{\#8} \\
+\st{After a Tetrimino falling, the game shall check if any row is filled. If so, rows filled with Tetriminoes shall be cleared up and everything above shall fall.}\\
+ \textbf{Description:} {\color{red}    A horizontal line shall be cleared} \\ 
+\textbf{Rationale: }{\color{red}     When Tetriminos form a horizontal line the line shall be cleared.} \\ 
+\textbf{Fit Criterion:} {\color{red}    When Tetriminos form a horizontal the line shall be removed from the screen.} \\
+\newline
+\textbf{FR10}: Game over \tab Use case: \hyperref[event:usesitem]{\#11} \\
+ \textbf{Description:} {\color{red}    The game shall be ended} \\ 
+\textbf{Rationale: }{\color{red}     The game shall be ended on a certain circumstance} \\ 
+ \textbf{Fit Criterion:} When part of a new Tetrimino(or the whole part) cannot be displayed in the game playfield because of collision with other Tetriminoes, the game shall be over.\\
+\newline
+\textbf{FR11}: \st{Speed of }falling\\
+\st{When the game starts, the original speed of falling shall be 3 grids per second. And the speed of falling shall accelerate as more and more rows are cleared up.} \\
+ \textbf{Description:} {\color{red}    The Tetriminos shall fall.} \\ 
+\textbf{Rationale: }{\color{red}     Tetriminos shall fall from the top to the bottom when appearing.} \\ 
+\textbf{Fit Criterion:} {\color{red}    The Tetriminos move from the top top the bottom at a certain speed.} \\
+\newline
+\textbf{FR12}: Score \st{ and Experience }system\\
+\st{The game shall have a scoring system and an Experience system. How many rows a user has cleared up and how much time a user ‘stays alive’ shall determine their score. But only how many rows a user has cleared up determines their exp. And if users clear up two or more rows at the same time, they can have extra experience.  is for buying items that shall help them clear up more rows.}\\
+ \textbf{Description:} {\color{red}    User shall score} \\ 
+\textbf{Rationale: }{\color{red}     When Tetriminos form a horizontal line the user gain scores.} \\ 
+\textbf{Fit Criterion:} {\color{red}    When Tetriminos form a horizontal the score shall increase.} \\
+\newline
+\textbf{FR13}: Item \tab Use case: \hyperref[event:usesitem]{\#9,\#10} \\
+\st{There are four different items listing to the left of the main playfield. Each item has a ‘price’ and users can buy them by experience you have earned. Press 1 to 4 to use the different item. If users do not have enough experience, the transaction shall not be successful.}\\
+ \textbf{Description:} {\color{red}    The system shall tell what items it has} \\ 
+\textbf{Rationale: }{\color{red}     User shall know what items the system has and can be used.} \\ 
+\textbf{Fit Criterion:} {\color{red}    The items are displayed on the screen} \\
+\newline
+\textbf{FR14}: Use Items \tab Use case: \hyperref[event:usesitem]{\#9,\#10} \\
+\st{There are four different items listing to the left of the main playfield. Each item has a ‘price’ and users can buy them by experience you have earned. Press 1 to 4 to use the different item. If users do not have enough experience, the transaction shall not be successful.}\\
+ \textbf{Description:} {\color{red}    User shall use the items} \\ 
+\textbf{Rationale: }{\color{red}     User shall use the items} \\ 
+\textbf{Fit Criterion:} {\color{red}    The items shall displayed and have its own function when clicking the items buttons} \\
+\newline
+\textbf{FR15}:\st{Slow(item2)} \tab Use case: \hyperref[event:usesitem]{\#9,\#10}  \\
+\st{When the user presses “2”, the falling speed of tetrominoes shall be halved and this effect shall last for 30 seconds. After that, the falling speed shall return to original speed.} \\
+\newline
+\textbf{FR16}: \st{Skip(item3)}\tab Use case: \hyperref[event:usesitem]{\#9,\#10} \\
+\st{When the user presses “3”, the next tetromino showed at the “next tetromino field” shall be replaced with another random tetromino.}\\
+\newline
+\textbf{FR17}:\st{Clear(item4)}\tab Use case: \hyperref[event:usesitem]{\#9,\#10} \\
+\st{When the user presses “4”, the top row which contains any testimonies shall be cleared up immediately.}\\
+
+\newpage
+\section{Non-functional Requirements}
+
+\subsection{Look and Feel Requirements}
+\textbf{LF1}: The falling of the tetrimino and line clear require animation. (Animation is required when the tetrimonos are falling or when a row is eliminated.)
+
+\subsection{Usability and Humanity Requirements}
+
+\textbf{UHR1}: Super Tetris shall follow the same rule in the Classic Tetris.\\ 
+\newline
+\textbf{UHR2}: Control commands, item bar, stop button and other event trigger button are visible and easy to learn. \hyperref[listofevent]{see list of event.} \\
+\subsection{Performance Requirements}
+\textbf{PR-Speed1}: Super Tetris  shall run at 30 fps, and it  shall catch the input within 100 milliseconds.\\
+\newline
+\textbf{PR-Safety1}: Super Tetris shall not trigger any physical damage to the users.\\
+\newline
+\textbf{PR-Precision1}:The event shall happen at the correct time. The boom shall explode when it stops. The ice shall slow the falling time when it is triggered. The line shall be cleared when a complete line is made. \hyperref[listofevent]{see list of event.}\\
+\newline
+\textbf{PR-Reliability1}:The program should be usable 24 hours per day, 365 days per year or 366 on leap years as long as the server is not expired.\\
+\newline
+\textbf{PR-Capacity1}:Super Tetris needs less than 10MB in memory only if the browser want store the website’s data to increase the loading speed.
+\newpage
+\subsection{Operational and Environmental Requirements}
+\textbf{OER1}: Super Tetris shall run on all major web browsers ( Chrome/Firefox /Safari /IE)
+\subsection{Maintainability and Support Requirements}
+
+\textbf{MR1}: The developers should be in charge of maintenance, so the contact information should show in the end of the website page for the players to report bugs and performance issues. 
+
+\subsection{Security Requirements}
+
+\textbf{SR2}:Super Tetris shall not collect user’s data such as email, username and personal information.
+
+\subsection{Cultural Requirements}
+\textbf{CR1}: Super Tetris shall instruct player in English.\\
+\newline
+\textbf{CR2}: Super Tetris shall keep the original Tetris’s Playing Method which is to obtain the score from “line clearing”\\
+\textbf{CR3}: {\color{red} The game shall not contain any violence and pornographic element.}
+\subsection{Legal Requirements}
+\textbf{LR1}: Super Tetris is based on an open source project. Super Tetris shall abidance by law.
+\subsection{Health and Safety Requirements}
+\textbf{HSR1}: \st{The game shall not contain any violence and pornographic element.}
+\textbf{HSR1}: {\color{red}    The game shall not cause finger strains, we separate the major control key and it will forces user use two hand to play the game. }
+\newpage
+\section{Project Issues}
+
+\subsection{Open Issues}
+\tab   When playing the game, The direction buttons may cause the screen moving instead of playing functions to the game. Also, as the game will be played on the Internet, a different browser may be used to play the game. As a result, the interface of the game may not fit the screen in some versions of the browsers.
+\subsection{Off-the-Shelf Solutions}
+\tab There are many versions of Tetris on the Internet such as “Welltris”, “Harris”, “Tetris Plus” and so on. The “Tetris Plus” has some items added, such as bombs.  Some others added “level” to the game. Many components including items, level systems are already made in some games. These elements are same or similar to the “Super Tetris” we are supposed to make. As result, there are many redeveloped Tetris game we can follow or copy.
+\subsection{New Problems}
+\tab Finding right animation associated with the game will be a problem. Numerous tests will be needed to check an  \st{anime} {\color{red} animation}  is played at the right time with right function and does not affect the gameplay. the  \st{anime} {\color{red} animation}  may have a larger size than it is supposed to, which, may result in lack of memory or lag. Every  \st{anime} {\color{red} animation}  needs to be adjusted frequently or changed in order to make the game look fantastic without affecting the gaming function.
+
+\subsection{Tasks}
+The check date of tasks below will show in the Gantt Chart.
+\subsubsection{Step}
+\begin{enumerate}
+\item Know the logic by studying the code in the original project.
+\item Learn how to build the new interface by CSS.
+\item Build the interface for score and experience and make sure they increase by some certain algorithms we mentioned in requirements. 
+\item Build the interface for game items and create the animation and sound when using game items.
+\item Make sure every game item's function does work as we mentioned in requirements
+\item Put all the codes in our cloud server and buy a domain for this game to make sure everyone can play our game by our domain
+
+\end{enumerate}
+
+\subsubsection{Phase}
+
+\begin{table}[h]
+\caption{\bf List of Phase} \label{tab:Phase}
+\begin{tabularx}{\textwidth}{p{4cm}X}
+\toprule {\bf Phase Name} & {\bf Summary}\\
+\midrule
+1.User Interfaces     &    Upgrade to include Score, Experience, and game items\\
+2.Animation              & about clearing up rows and bomb explosion\\
+3.Sound                  & about clearing up rows and using items\\
+4.Item functionality  &    Items' functions shall work as requirements\\
+5.Testing                & Test the game \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Migration to the New Product}
+\tab The new product shall add some more elements(Score, Experience, items) by upgrading the interface, but it won't interfere the original interface. Game items shall work as requirements, but it won't influence the original game mechanics or cause bugs. After transferring everything to the server, we shall test the project carefully on different devices.
+\newpage
+\subsection{Risks}
+\tab There are several risks while proceeding the project. One of the risks is that graphics,  \st{anime} {\color{red} animation} , and buttons will be added to the game. These features are supposed to connect each other which makes the program complex to implement. \\
+\newline
+\tab To overcome the program is very complex to implement, the project will be tested more frequently. After each element added to the program, numerous tests will be needed. If the first element is added successfully, then other elements are allowed to be added. In term of connecting each element, one team member will keep researching the way to make all the elements effectively connected. Also, each member will be assigned to research a certain type of elements so as to let them functional necessary. \\
+\newline
+\tab During the-the Proof of Concept Demonstrations, all the elements should be tested. The goal is to make all the elements work excellently without bugs. However, if a bug appears during playing the game, the game will shut down, and a line says “Please contact the developer.” will pop up.
+\subsection{Costs}
+\tab As the game runs on an Internet server, an annual fee of 70 Canadian Dollars will be needed. However, the whole project will be developed using our own laptop, there will be no other fee needed. For this project, it will be finished within a year. As a result, the total cost of the project is 70 Canadian Dollars.
+\subsection{User Documentation and Training}
+\tab As Super Tetris is similar to the original Tetris, only a little User Documentation will be needed. There are less than ten buttons needed. A simple instruction will be shown at the beginning of the game. While playing, a small picture will appear on the right-top corner of the screen which indicates how to use the items. There is no training for the players.
+\subsection{Waiting Room}
+\tab After the “Super Tetris” is finished, numerous new features can be added. We can add PvP system(People vs People System) to the game. People will be able to play with a stranger on the server. While playing with each other, some debuff items shall be added, which makes the game more competitive. Additionally, a friend system can also be added.  Thus, the users are able to play with their friends using their own account on the server.
+\subsection{Ideas for Solutions}
+\tab For programming, all elements should be added one by one and after an element is added, hundreds of test will be implied to the certain element to make sure it works fine. Moreover, there are numerous redeveloped Tetris similar to our program. Thus, if issues occur when programming, there are many samples we can consult or learn from.
+
+
+
+
+
+\end{document}

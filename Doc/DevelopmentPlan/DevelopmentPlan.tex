@@ -1,0 +1,214 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{pifont}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{soul}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand\tabtab[1][0.3cm]{\hspace*{#1}}
+\newcommand\tabtabtab[1][0.05cm]{\hspace*{#1}}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\title{\parbox{\linewidth}{\centering Development Plan\endgraf\bigskip Super Tetris}}
+\author{\parbox{\linewidth}{\bigskip \centering Group\#: 38 \endgraf\bigskip Team Name: Binary \endgraf\bigskip Members: \endgraf\bigskip Tongfei Wang : wangt62 \endgraf\bigskip Bowen Yuan : yuanb1 \endgraf\bigskip Tim Zhang : zhangj14}}
+\date{\parbox{\linewidth}{\bigskip\bigskip \centering \today\endgraf\bigskip SFWR ENG 3XA3 \endgraf\bigskip McMaster University}}
+
+
+\pagestyle {plain}
+\pagenumbering{arabic}
+\newcounter{stepnum}
+
+
+
+
+\begin{document}
+
+\begin{table}[hp]
+\caption{Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{llX}
+\toprule
+\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+\midrule
+Sep.28th & Tim Zhang & Gantt Chart created\\
+Sep.28th & Tongfei Wang & Team meeting plan created\\
+Sep.28th & Bowen Yuan & Gitflow workflow plan created\\
+Dec. 6th & Tim Zhang & Rev\_1 update\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\maketitle
+
+This is the development plan for Super Tetris by Team 38, Team Binary.
+%-----------------------------------------------------------------------------------------------------------
+\newpage
+\tableofcontents
+\newpage
+%-----------------------------------------------------------------------------------------------------------
+
+\section{Team Meeting Plan}
+\subsection{General Information}
+\tab The team meetings will be held twice a week. One is at 6-7pm on Wednesday and the other is at the same time on Friday. Both meetings will be held in the Mills Library McMaster University. Bowen Yuan, the team leader, will always chair the meeting. Moreover, an meeting can be requested whenever it is necessary. 
+\subsection{Roles of the Meeting}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|p{8cm}|}
+\hline
+ \textbf{Name} & \textbf{Role} & \tab \tab \textbf{Description} \\
+\hline
+Bowen Yuan& Leader & 
+ - {\footnotesize Stating the problem}   \newline   
+ - {\footnotesize Setting the goal of the meeting} \newline 
+ - {\footnotesize Organizing the meeting is based on the agenda} \newline 
+ - {\footnotesize Guarantee the meeting ends with  decision made} \newline 
+\\
+\hline
+Tim Zhang & Note taker &  
+ - {\footnotesize Recording every essential point of the meeting}   \newline   
+ - {\footnotesize Reviewing the notes after meeting} \newline 
+ - {\footnotesize Filling the meeting minute during the meeting} \newline 
+\\
+\hline
+Tongfei Wang& Facilitator & 
+ - {\footnotesize Preparing the facilities if needed}   \newline   
+ - {\footnotesize Chair the meeting} \newline 
+ - {\footnotesize Guarantee the meeting time is well-managed} \newline 
+\\
+\hline
+\end{tabular}
+\caption{ Role in Meeting }
+\end{table}
+
+\subsection{Meeting Agendas}
+~\newline
+\begin{tabular}{l}
+
+ Meeting Agendas  \\
+\hline
+ - Review meeting minutes from previous meetings \\
+- Decide the goal of the meeting\\
+- Check the project plan\\
+- Analyze the tasks we are facing\\
+- State the problem may affect the entire project\\
+- List agenda topics as questions\\
+- Analyze the task may have \\
+- Estimate the realistic time for each topic\\
+- Specify the responsibility of each number\\
+- Assign jobs to every member\\
+- Review the meeting’s effectiveness\\
+- Check the notes\\
+- Finish the meeting minute\\
+
+
+\end{tabular}
+%-----------------------------------------------------------------------------------------------------------
+\newpage
+\section{Team Communication Plan}
+\tab
+\begin{enumerate}
+\item Messenger (group chat):  \st{is used to report issues and track progress.} {\color{red}general communication}
+\item Phone: is used to for emergency issues.
+\item GitLab: is used to upload the file.
+\item \st{E-mail: is used to transfer the file}
+\end{enumerate}
+\tab
+%-----------------------------------------------------------------------------------------------------------
+\section{Team Member Roles}
+~\newline
+\begin{tabular}{| l | p{9.5cm} |}
+\hline
+\textbf{Last Name, First Name} & \textbf{Role in the Project}\\
+\hline
+Wang, Tongfei  & 
+- {\small Experts on Technology (Focuses on Javascript and HTML5)}  \newline
+- {\small Log Admin (Chair the meeting} 
+
+\\
+\hline
+Yuan, Bowen & 
+- {\small Team Leader}  \newline
+- {\small Experts on Git (Focuses on Gitlab issues ) } \newline
+- {\small Website architect (Deal with web UI issues)}  
+\\
+\hline
+Zhang, Tim  & 
+- {\small Experts on Latex (Fomat the documentation) } \newline
+- {\small Game Designer (Focuses Game Balance  and Game scene)} 
+\\
+\hline
+\end{tabular}
+\newpage
+%-----------------------------------------------------------------------------------------------------------
+\section{Git Workflow Plan}
+\tab
+\subsection*{General Information}
+~\newline
+\tab Due to that our project is not large and we have only three developers, \st{we planned to use only two branches(master branch and feature branch) to develop our project. The master branch is our main branch and for both developing and releasing. The feature branch is a supporting branch in which every developer can add some features or do some hotfix.}{\color{red} we planned to use one master branch and multiple feature branch, basicly we created one brach for each feature. Developer will work on with these feature branch first. After the coding and testing process, The feature branch will be merged, and the next version of the software will be released.}
+ When finished, the feature branch should be merged back into master branch.
+\subsection*{Labels}
+~\newline
+\tab Feature: The issue is a request for adding new functionalities.\\
+\tab Bug: The issue is something go wrong in our project.
+~\tab
+\subsection*{Milestones}
+\tab
+\begin{enumerate}[label=(\roman*)]
+\item Understanding all of the original source code.
+\item Adding the experience and gold feature to the game.
+\item Adding some items to the game.
+\item Redesign this game to make everything meet our requirements.
+\end{enumerate}
+%-----------------------------------------------------------------------------------------------------------
+\newpage
+\section{Proof of Concept Demonstration Plan}
+~\newline
+\tab There are several risks while proceeding the project. One of the risks is that graphics, \st{anime} {\color{red} animation} and buttons will be added to the game. These features are supposed to connect each other which makes the program complex to implement. The other risk is testing. Although there are several ways to test a program, it may need sophisticated method to test out all the bugs of a game.\\
+
+\tab To overcome the program being very complex to implement, the project will be tested more frequently. After each element added to the program, numerous tests will be needed. If the first element is added successfully, then other elements are allowed to be added. In term of connecting each element, one team member will keep researching the way to make all the elements effectively connected. Also, each member will be assigned to research a certain type of elements so as to let them functional necessary.{\color{red}During the proof of concept demonstration our team will clearly show the effect of each button after pressing then we will compare the actual effect and expect effect. }\\
+
+\tab One other main risk is about testing. As a player may have several different actions while playing a game, it is difficult and complicated to test a game. \st{A testing program which is able to test the game thousands of times makes the project stable.} It is also necessary to ask a volunteer team to test the game. Finally, the beta version will be uploaded to the Github and the code will be made open-sources. Any who interested in our project are encouraged to modify the program.\\
+
+\tab A fantastic project always has numerous risks. However, there is always a way to solve the problem. As a result, our team will have plans to overcome the risks. The project will be hard, but successful.
+
+%-----------------------------------------------------------------------------------------------------------
+\break
+\section{Technology}
+\begin{itemize}
+\item Programming language \, \,\, \, \, \,  \, \,  \tabtab{\ding{227}} \tabtab \tabtab \tabtab \tabtab \tabtab Javascript,Html5,CSS
+\item IDE \,\, \, \, \, \, \,  \, \, \, \, \,\, \,\, \, \, \,\, \,\,  \, \, \, , \, \,  \tabtab{\ding{227}} \tabtab\tabtab\tabtab \tabtab \tabtab  NetBeans IDE 8.2 
+\item Testing framework    \, \, \, \,\, \, \, \,  \, \, \, \, \tabtab {\ding{227}} \tabtab \tabtab \tabtab \tabtab \tabtab JSTestDriver (unit test)
+\item Code Document generation \, \, \,\, \tabtabtab\tabtab{\ding{227}} \tabtab \tabtab \tabtab \tabtab \tabtab JSDoc 
+\item Documentation  \, \, \, \, \, \, \, \, \, \, \, \, \,  \, \tabtab{\ding{227}} \tabtab \tabtab \tabtab \tabtab\tabtab Latex
+\end{itemize}
+%-----------------------------------------------------------------------------------------------------------
+\section{Coding Style}
+
+\tab \st{Due to that we did not find a specific coding style for Javascript and html5, so we decided to use google Java Style.}\\
+
+\tabtab \st{ https://google.github.io/styleguide/javaguide.html}\\
+\tabtab {\color{red}\url{https://www.drupal.org/docs/develop/standards/javascript/javascript-coding-standards}}
+%-----------------------------------------------------------------------------------------------------------
+\section{Project Schedule}
+
+
+Gantt Chart included in files.
+
+
+%-----------------------------------------------------------------------------------------------------------
+\newpage
+\section{Project Review}
+~\newline
+\tab Overall this project was completed successfully. We met most of objectives that we set out to achieve. Both internal economy system and item system have been accomplished. One of objective we did not achieve is the experience system, even though our group discussed a lot about this system. Finally we decided to leave it as the future development feature, because we do not want the game to become more complex at this moment. This game is now published online, we have uploaded to the server we bought, also linked to a domain address \url{www.supertertris.com} which is not in our scope but it ends up in a great result. The overall development of the software went smoothly as well. \\
+\tab The decomposition of responsibility worked well as the roles assigned to each member was the role that they were most adept in. Thus the quality of the work completed was optimal. Through this project we gained the experience of operating on the server, coding by Javascript and HTML5, using GitLab for version control and latex for professional document editing. However, it is regretful that we can not make our UI interface looks as aesthetic as we expected because of the heavy workload in this semester. 
+
+
+
+\end{document}

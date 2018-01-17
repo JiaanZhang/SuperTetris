@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="SuperTetris" company="Binary" webLink="http://" view-date="2017-09-10" view-index="0" gantt-divider-location="381" resource-divider-location="300" version="2.8.5" locale="en_CA">
+    <description/>
+    <view zooming-state="default:3" id="gantt-chart">
+        <field id="tpd3" name="Name" width="188" order="0"/>
+        <field id="tpd4" name="Begin date" width="94" order="1"/>
+        <field id="tpd5" name="End date" width="93" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="209" order="0"/>
+        <field id="1" name="Default role" width="85" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="true"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="55" name="Documentation" color="#000000" meeting="false" project="true" start="2017-09-10" duration="87" complete="0" expand="true">
+            <task id="150" name="1)Problem Statement" color="#8cb6ce" meeting="false" start="2017-09-10" duration="13" complete="0" expand="false">
+                <depend id="3" type="2" difference="0" hardness="Strong"/>
+                <task id="151" name="Group Meeting: assignment mission" color="#8cb6ce" meeting="false" start="2017-09-10" duration="1" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+                    <depend id="152" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="152" name="Documentation Writing" color="#8cb6ce" meeting="false" start="2017-09-11" duration="6" complete="0" expand="false" cost-manual-value="0.0" cost-calculated="true">
+                    <depend id="156" type="2" difference="0" hardness="Strong"/>
+                    <task id="153" name="Introduction" color="#8cb6ce" meeting="false" start="2017-09-11" duration="6" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+                    <task id="154" name="Importance" color="#8cb6ce" meeting="false" start="2017-09-11" duration="6" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+                    <task id="155" name="Context" color="#8cb6ce" meeting="false" start="2017-09-11" duration="6" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+                </task>
+                <task id="156" name="Modification and transfer it to Latex" color="#8cb6ce" meeting="false" start="2017-09-17" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+                    <depend id="157" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="157" name="Pushing it to Gitlab" color="#8cb6ce" meeting="false" start="2017-09-22" duration="1" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+            </task>
+            <task id="3" name="2)Development Plan" color="#8cb6ce" meeting="false" start="2017-09-23" duration="6" complete="0" expand="false">
+                <depend id="4" type="2" difference="0" hardness="Strong"/>
+                <task id="30" name="Group Meeting: assigning missions" color="#8cb6ce" meeting="false" start="2017-09-23" duration="1" complete="0" expand="true">
+                    <depend id="43" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="43" name="Documentation Writing" color="#8cb6ce" meeting="false" start="2017-09-24" duration="2" complete="0" expand="false">
+                    <depend id="44" type="2" difference="0" hardness="Strong"/>
+                    <task id="137" name="Team Meeting Plan, PoCD plan" color="#8cb6ce" meeting="false" start="2017-09-24" duration="2" complete="0" expand="true"/>
+                    <task id="139" name="Communication plam, Gantt Chart" color="#8cb6ce" meeting="false" start="2017-09-24" duration="2" complete="0" expand="true"/>
+                    <task id="140" name="Code style, Git workflow plan,technology" color="#8cb6ce" meeting="false" start="2017-09-24" duration="2" complete="0" expand="true"/>
+                </task>
+                <task id="44" name="Group Meeting: Discussing the problem" color="#8cb6ce" meeting="false" start="2017-09-26" duration="1" complete="0" expand="true">
+                    <depend id="45" type="2" difference="0" hardness="Strong"/>
+                    <depend id="148" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="45" name="Document Modification" color="#8cb6ce" meeting="false" start="2017-09-27" duration="1" complete="0" expand="true">
+                    <depend id="41" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="148" name="Latex Work" color="#8cb6ce" meeting="false" start="2017-09-27" duration="1" complete="0" expand="true">
+                    <depend id="41" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="41" name="Pushing it to Gitlab" color="#8cb6ce" meeting="false" start="2017-09-28" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="4" name="3)Requirements Document Rev0" color="#8cb6ce" meeting="false" start="2017-09-30" duration="7" complete="0" expand="false">
+                <depend id="6" type="2" difference="0" hardness="Strong"/>
+                <task id="51" name="Group Meeting: Set up working plan" color="#8cb6ce" meeting="false" start="2017-09-30" duration="1" complete="0" expand="true">
+                    <depend id="53" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="53" name="Studying the Orignal document" color="#8cb6ce" meeting="false" start="2017-10-01" duration="1" complete="0" expand="true">
+                    <depend id="54" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="54" name="Writing the Document" color="#8cb6ce" meeting="false" start="2017-10-02" duration="1" complete="0" expand="true">
+                    <depend id="61" type="2" difference="0" hardness="Strong"/>
+                    <task id="167" name="Project Drivers" color="#8cb6ce" meeting="false" start="2017-10-02" duration="1" complete="0" expand="true"/>
+                    <task id="192" name="Functional Requirment" color="#8cb6ce" meeting="false" start="2017-10-02" duration="1" complete="0" expand="true"/>
+                    <task id="194" name="Non-Functional Requirment" color="#8cb6ce" meeting="false" start="2017-10-02" duration="1" complete="0" expand="true"/>
+                    <task id="195" name="Project Issues" color="#8cb6ce" meeting="false" start="2017-10-02" duration="1" complete="0" expand="true"/>
+                </task>
+                <task id="61" name="Group Meeting: Exchanging info and Solving the problems" color="#8cb6ce" meeting="false" start="2017-10-03" duration="1" complete="0" expand="true">
+                    <depend id="62" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="62" name="Modify Document" color="#8cb6ce" meeting="false" start="2017-10-04" duration="2" complete="0" expand="true">
+                    <depend id="63" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="63" name="Uploading Document" color="#8cb6ce" meeting="false" start="2017-10-06" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="6" name="4)Proof of Concept Demonstration" color="#8cb6ce" meeting="false" start="2017-10-07" duration="10" complete="0" expand="false">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+                <task id="70" name="Group Meeting: following the plan and assign jobs" color="#8cb6ce" meeting="false" start="2017-10-07" duration="1" complete="0" expand="true">
+                    <depend id="71" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="71" name="Working on own mission and reporting the issues" color="#8cb6ce" meeting="false" start="2017-10-08" duration="3" complete="0" expand="true">
+                    <depend id="72" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="72" name="Group Meeting: Solving the problems" color="#8cb6ce" meeting="false" start="2017-10-11" duration="1" complete="0" expand="true">
+                    <depend id="73" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="73" name="Modify the Code" color="#8cb6ce" meeting="false" start="2017-10-12" duration="4" complete="0" expand="true">
+                    <depend id="75" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="75" name="Uploading the Code" color="#8cb6ce" meeting="false" start="2017-10-16" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="8" name="5)Test Plan" color="#8cb6ce" meeting="false" start="2017-10-17" duration="10" complete="0" expand="false">
+                <depend id="10" type="2" difference="0" hardness="Strong"/>
+                <task id="201" name="Group Meeting: discuss the test method" color="#8cb6ce" meeting="false" start="2017-10-17" duration="1" complete="0" expand="true">
+                    <depend id="208" type="2" difference="0" hardness="Strong"/>
+                    <depend id="210" type="2" difference="0" hardness="Strong"/>
+                    <depend id="212" type="2" difference="0" hardness="Strong"/>
+                    <depend id="214" type="2" difference="0" hardness="Strong"/>
+                    <depend id="215" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="202" name="Working with the document" color="#8cb6ce" meeting="false" start="2017-10-18" duration="5" complete="0" expand="true">
+                    <depend id="207" type="2" difference="0" hardness="Strong"/>
+                    <task id="208" name="General Information" color="#8cb6ce" meeting="false" start="2017-10-18" duration="5" complete="0" expand="true"/>
+                    <task id="210" name="Plan" color="#8cb6ce" meeting="false" start="2017-10-18" duration="5" complete="0" expand="true"/>
+                    <task id="212" name="System Test" color="#8cb6ce" meeting="false" start="2017-10-18" duration="5" complete="0" expand="true"/>
+                    <task id="214" name="Test for PoC" color="#8cb6ce" meeting="false" start="2017-10-18" duration="5" complete="0" expand="true"/>
+                    <task id="215" name="Unit Testing Plan" color="#8cb6ce" meeting="false" start="2017-10-18" duration="5" complete="0" expand="true">
+                        <depend id="207" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                </task>
+                <task id="207" name="Modify the document" color="#8cb6ce" meeting="false" start="2017-10-23" duration="3" complete="0" expand="true">
+                    <depend id="205" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="205" name="Uploading the document" color="#8cb6ce" meeting="false" start="2017-10-26" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="10" name="6)Design and Document Rev0" color="#8cb6ce" meeting="false" start="2017-10-27" duration="16" complete="0" expand="false">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+                <task id="245" name="Group Meeting" color="#8cb6ce" meeting="false" start="2017-10-27" duration="1" complete="0" expand="true"/>
+                <task id="251" name="Documentation" meeting="false" start="2017-10-27" duration="14" complete="0" expand="false">
+                    <task id="254" name="MG" color="#8cb6ce" meeting="false" start="2017-10-28" duration="13" complete="0" expand="true"/>
+                    <task id="256" name="MIS" color="#8cb6ce" meeting="false" start="2017-10-28" duration="13" complete="0" expand="true"/>
+                    <task id="258" name="Gantt chart update" meeting="false" start="2017-10-27" duration="1" complete="0" expand="true"/>
+                </task>
+                <task id="260" name="Modify the document" color="#8cb6ce" meeting="false" start="2017-11-09" duration="2" complete="0" expand="true"/>
+                <task id="253" name="Uploading the Document Rev0" color="#8cb6ce" meeting="false" start="2017-11-10" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="12" name="7)Demonstration Rev0" color="#8cb6ce" meeting="false" start="2017-11-12" duration="2" complete="0" expand="false">
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+                <task id="265" name="Group Meeting" color="#8cb6ce" meeting="false" start="2017-11-12" duration="1" complete="0" expand="true"/>
+                <task id="268" name="Prepariation" color="#8cb6ce" meeting="false" start="2017-11-13" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="14" name="8)Final Demonstration Rev1" color="#8cb6ce" meeting="false" start="2017-11-14" duration="13" complete="0" expand="false">
+                <depend id="17" type="2" difference="0" hardness="Strong"/>
+                <task id="271" name="Group Meeting" color="#8cb6ce" meeting="false" start="2017-11-14" duration="1" complete="0" expand="true"/>
+                <task id="273" name="Preparation" color="#8cb6ce" meeting="false" start="2017-11-15" duration="10" complete="0" expand="true"/>
+                <task id="274" name="Pre demo" color="#8cb6ce" meeting="false" start="2017-11-25" duration="2" complete="0" expand="true"/>
+            </task>
+            <task id="17" name="9)Final Documentation Rev1" color="#8cb6ce" meeting="false" start="2017-11-28" duration="8" complete="0" expand="false">
+                <task id="275" name="Group Meeting" color="#8cb6ce" meeting="false" start="2017-11-28" duration="1" complete="0" expand="true"/>
+                <task id="276" name="Documentation" meeting="false" start="2017-11-29" duration="6" complete="0" expand="false">
+                    <task id="278" name="gantt chart" color="#8cb6ce" meeting="false" start="2017-11-29" duration="6" complete="0" expand="true"/>
+                    <task id="279" name="Pervious modification of document" color="#8cb6ce" meeting="false" start="2017-11-29" duration="6" complete="0" expand="true"/>
+                    <task id="280" name="test plan and test report" color="#8cb6ce" meeting="false" start="2017-11-29" duration="6" complete="0" expand="true"/>
+                </task>
+                <task id="277" name="upload document" color="#8cb6ce" meeting="false" start="2017-12-05" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="56" name="Coding" color="#000000" meeting="false" start="2017-09-10" duration="81" complete="0" expand="false">
+            <task id="77" name="Learing the Javascript and HTML5" color="#8cb6ce" meeting="false" start="2017-09-10" duration="30" complete="0" expand="true">
+                <depend id="78" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="78" name="Studying the Orignal Code" color="#8cb6ce" meeting="false" start="2017-10-10" duration="5" complete="0" expand="true">
+                <depend id="79" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="79" name="Module Implementation" color="#8cb6ce" meeting="false" start="2017-10-15" duration="12" complete="0" expand="false">
+                <depend id="239" type="2" difference="0" hardness="Strong"/>
+                <depend id="240" type="2" difference="0" hardness="Strong"/>
+                <task id="263" name="Main Module" color="#8cb6ce" meeting="false" start="2017-10-15" duration="12" complete="0" expand="true"/>
+                <task id="264" name="HTML" color="#8cb6ce" meeting="false" start="2017-10-15" duration="12" complete="0" expand="true"/>
+            </task>
+            <task id="239" name="Test_Code" meeting="false" start="2017-10-27" duration="15" complete="0" expand="false">
+                <depend id="82" type="2" difference="0" hardness="Strong"/>
+                <task id="240" name="User Input" color="#8cb6ce" meeting="false" start="2017-10-27" duration="3" complete="0" expand="true"/>
+                <task id="241" name="Navigation" color="#8cb6ce" meeting="false" start="2017-10-27" duration="9" complete="0" expand="true"/>
+                <task id="242" name="Game Logic" color="#8cb6ce" meeting="false" start="2017-10-27" duration="9" complete="0" expand="true"/>
+                <task id="243" name="Usability" color="#8cb6ce" meeting="false" start="2017-10-27" duration="15" complete="0" expand="true"/>
+                <task id="244" name="Performance" color="#8cb6ce" meeting="false" start="2017-10-27" duration="15" complete="0" expand="true"/>
+            </task>
+            <task id="82" name="Final_Test_Plan" color="#8cb6ce" meeting="false" start="2017-11-11" duration="19" complete="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Tim Zhang" function="1" contacts="zhangj14@mcmaster.ca" phone="7782691755"/>
+        <resource id="1" name="Bowen Yuan" function="Default:1" contacts="yuanb1@mcmaster.ca" phone="2898877061"/>
+        <resource id="2" name="Tongfei Wang" function="1" contacts="wangt62@mcmaster.ca" phone="4168330394"/>
+    </resources>
+    <allocations>
+        <allocation task-id="139" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="148" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="153" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="156" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="194" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="71" resource-id="0" function="1" responsible="true" load="33.0"/>
+        <allocation task-id="72" resource-id="0" function="1" responsible="true" load="33.0"/>
+        <allocation task-id="210" resource-id="0" function="1" responsible="true" load="30.0"/>
+        <allocation task-id="215" resource-id="0" function="1" responsible="true" load="30.0"/>
+        <allocation task-id="207" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="245" resource-id="0" function="1" responsible="true" load="20.0"/>
+        <allocation task-id="253" resource-id="0" function="1" responsible="true" load="20.0"/>
+        <allocation task-id="264" resource-id="0" function="1" responsible="true" load="20.0"/>
+        <allocation task-id="205" resource-id="0" function="1" responsible="true" load="50.0"/>
+        <allocation task-id="265" resource-id="0" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="268" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="274" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="275" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="278" resource-id="0" function="1" responsible="true" load="30.0"/>
+        <allocation task-id="240" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="82" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="140" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="41" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="154" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="157" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="192" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="70" resource-id="1" function="Default:1" responsible="false" load="33.0"/>
+        <allocation task-id="71" resource-id="1" function="Default:1" responsible="false" load="33.0"/>
+        <allocation task-id="72" resource-id="1" function="Default:1" responsible="false" load="33.0"/>
+        <allocation task-id="73" resource-id="1" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="75" resource-id="1" function="Default:1" responsible="true" load="80.0"/>
+        <allocation task-id="212" resource-id="1" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="207" resource-id="1" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="205" resource-id="1" function="Default:1" responsible="false" load="50.0"/>
+        <allocation task-id="245" resource-id="1" function="Default:1" responsible="false" load="20.0"/>
+        <allocation task-id="253" resource-id="1" function="Default:1" responsible="false" load="20.0"/>
+        <allocation task-id="260" resource-id="1" function="Default:1" responsible="false" load="20.0"/>
+        <allocation task-id="254" resource-id="1" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="263" resource-id="1" function="Default:1" responsible="false" load="20.0"/>
+        <allocation task-id="265" resource-id="1" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="268" resource-id="1" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="271" resource-id="1" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="273" resource-id="1" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="274" resource-id="1" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="275" resource-id="1" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="280" resource-id="1" function="Default:1" responsible="true" load="30.0"/>
+        <allocation task-id="277" resource-id="1" function="Default:1" responsible="true" load="5.0"/>
+        <allocation task-id="241" resource-id="1" function="Default:1" responsible="true" load="10.0"/>
+        <allocation task-id="242" resource-id="1" function="Default:1" responsible="true" load="10.0"/>
+        <allocation task-id="82" resource-id="1" function="Default:1" responsible="false" load="10.0"/>
+        <allocation task-id="137" resource-id="2" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="155" resource-id="2" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="167" resource-id="2" function="1" responsible="true" load="50.0"/>
+        <allocation task-id="195" resource-id="2" function="1" responsible="true" load="50.0"/>
+        <allocation task-id="70" resource-id="2" function="1" responsible="false" load="33.0"/>
+        <allocation task-id="71" resource-id="2" function="1" responsible="false" load="33.0"/>
+        <allocation task-id="72" resource-id="2" function="1" responsible="false" load="33.0"/>
+        <allocation task-id="73" resource-id="2" function="1" responsible="false" load="50.0"/>
+        <allocation task-id="208" resource-id="2" function="1" responsible="true" load="30.0"/>
+        <allocation task-id="207" resource-id="2" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="245" resource-id="2" function="1" responsible="false" load="20.0"/>
+        <allocation task-id="253" resource-id="2" function="1" responsible="false" load="20.0"/>
+        <allocation task-id="260" resource-id="2" function="1" responsible="false" load="20.0"/>
+        <allocation task-id="256" resource-id="2" function="1" responsible="true" load="50.0"/>
+        <allocation task-id="263" resource-id="2" function="1" responsible="true" load="20.0"/>
+        <allocation task-id="214" resource-id="2" function="1" responsible="true" load="30.0"/>
+        <allocation task-id="265" resource-id="2" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="268" resource-id="2" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="271" resource-id="2" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="273" resource-id="2" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="274" resource-id="2" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="275" resource-id="2" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="279" resource-id="2" function="1" responsible="true" load="30.0"/>
+        <allocation task-id="243" resource-id="2" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="244" resource-id="2" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="82" resource-id="2" function="1" responsible="false" load="10.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="member"/>
+        <role id="3" name=""/>
+    </roles>
+</project>
